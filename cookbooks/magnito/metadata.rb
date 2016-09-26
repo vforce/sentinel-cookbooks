@@ -16,3 +16,4 @@ version '0.1.0'
 
 
 depends 'php'
+depends 'mysql'
