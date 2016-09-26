@@ -2,6 +2,9 @@ DEPENDENCIES
   magnito
     path: .
     metadata: true
+  mysql
+    git: git@github.com:chef-cookbooks/mysql.git
+    revision: 52bb68f97fa2426a40a9399cc522789a2af7c421
   php
     git: git@github.com:chef-cookbooks/php.git
     revision: 3996081458c29e7f6535604d56cc294cc82d79c8
