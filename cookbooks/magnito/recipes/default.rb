@@ -5,7 +5,7 @@
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 include_recipe 'php'
 
-mysql_service 'default' do
+mysql_service 'shop' do
 	version '5.5'
 	initial_root_password 'root'
 	action [:create, :start]
