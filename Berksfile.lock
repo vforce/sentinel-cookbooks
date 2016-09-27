@@ -1,7 +1,7 @@
 DEPENDENCIES
   mysql
     git: git@github.com:chef-cookbooks/mysql.git
-    revision: 52bb68f97fa2426a40a9399cc522789a2af7c421
+    revision: fdd8e7d2317aab7e303797a33a6b2bfafa4b258e
   php
     git: git@github.com:chef-cookbooks/php.git
     revision: 3996081458c29e7f6535604d56cc294cc82d79c8
@@ -11,13 +11,13 @@ GRAPH
     compat_resource (>= 12.14)
     mingw (>= 1.1)
     seven_zip (>= 0.0.0)
-  compat_resource (12.14.6)
+  compat_resource (12.14.7)
   iis (5.0.1)
     windows (>= 1.34.6)
   mingw (1.2.4)
     compat_resource (>= 0.0.0)
     seven_zip (>= 0.0.0)
-  mysql (8.0.3)
+  mysql (8.0.4)
   php (2.1.1)
     build-essential (>= 0.0.0)
     iis (>= 0.0.0)
