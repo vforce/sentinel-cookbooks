@@ -16,3 +16,26 @@ package ['git']
 docker_service 'default' do
   action [:create, :start]
 end
+
+base_folder = "/home/ubuntu"
+
+file "#{base_folder}/git_wrapper.sh" do
+	mode "0755"
+	content "#!/bin/sh\nexec /usr/bin/ssh -i /home/ubuntu/id_rsa_mystique \"$@\""
+end
+
+git "#{base_folder}/home/ubuntu/shop" do 
+	repository 'git@github.com:zalora/shop.git'
+	enable_submodules true
+	action :sync
+	revision 'master'
+	ssh_wrapper "#{base_folder}/git_wrapper.sh"
+end
+
+git "#{base_folder}/shop-docker" do 
+	repository 'git@github.com:zalora/shop-docker.git'
+	enable_submodules true
+	action :sync
+	revision 'master'
+	ssh_wrapper "#{base_folder}/git_wrapper.sh"
+end
