@@ -16,3 +16,9 @@ mysql_config 'shop' do
 	notifies :restart, 'mysql_service[shop]'
 	action :create
 end
+
+package ['git']
+
+docker_service 'default' do
+  action [:create, :start]
+end
