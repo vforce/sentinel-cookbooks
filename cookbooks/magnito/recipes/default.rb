@@ -4,7 +4,6 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 include_recipe 'php'
-include_recipe 'mysql'
 
 mysql_service 'shop' do
 	version '5.6'
