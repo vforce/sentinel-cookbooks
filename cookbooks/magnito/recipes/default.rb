@@ -11,12 +11,6 @@ mysql_service 'default' do
 	action [:create, :start]
 end
 
-mysql_config 'default' do
-	source 'mysql.conf.erb'
-	notifies :restart, 'mysql_service[default]'
-	action :create
-end
-
 package ['git']
 
 docker_service 'default' do
