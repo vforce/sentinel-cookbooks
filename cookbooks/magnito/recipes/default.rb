@@ -6,7 +6,7 @@
 include_recipe 'php'
 
 mysql_service 'shop' do
-	version '5.6'
+	version '5.5'
 	initial_root_password 'root'
 	action [:create, :start]
 end
