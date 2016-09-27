@@ -24,7 +24,7 @@ file "#{base_folder}/git_wrapper.sh" do
 	content "#!/bin/sh\nexec /usr/bin/ssh -i /home/ubuntu/.ssh/id_rsa_mystique \"$@\""
 end
 
-git "#{base_folder}/home/ubuntu/shop" do 
+git "#{base_folder}/shop" do 
 	repository 'git@github.com:zalora/shop.git'
 	enable_submodules true
 	action :sync
