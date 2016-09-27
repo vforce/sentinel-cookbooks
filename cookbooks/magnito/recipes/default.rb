@@ -13,7 +13,7 @@ end
 
 mysql_config 'default' do
 	source 'mysql.conf.erb'
-	notifies :restart, 'mysql_service[shop]'
+	notifies :restart, 'mysql_service[default]'
 	action :create
 end
 
