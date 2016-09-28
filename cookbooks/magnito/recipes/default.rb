@@ -24,7 +24,7 @@ file "#{base_folder}/git_wrapper.sh" do
 	content "#!/bin/sh\nexec /usr/bin/ssh -o StrictHostKeyChecking=no -i /home/ubuntu/.ssh/id_rsa_mystique \"$@\""
 end
 
-['shop', 'shop-docker', 'mystique'].each do |repo|
+['shop', 'shop-docker', 'mystique', 'costa'].each do |repo|
 	git "#{base_folder}/#{repo}" do 
 		repository "git@github.com:zalora/#{repo}.git"
 		enable_submodules true
