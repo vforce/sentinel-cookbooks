@@ -21,7 +21,7 @@ base_folder = "/home/ubuntu"
 
 file "#{base_folder}/git_wrapper.sh" do
 	mode "0755"
-	content "#!/bin/sh\nexec /usr/bin/ssh -i /home/ubuntu/.ssh/id_rsa_mystique \"$@\""
+	content "#!/bin/sh\nexec /usr/bin/ssh -o StrictHostKeyChecking=no -i /home/ubuntu/.ssh/id_rsa_mystique \"$@\""
 end
 
 git "#{base_folder}/shop" do 
