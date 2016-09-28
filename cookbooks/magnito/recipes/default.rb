@@ -24,18 +24,12 @@ file "#{base_folder}/git_wrapper.sh" do
 	content "#!/bin/sh\nexec /usr/bin/ssh -o StrictHostKeyChecking=no -i /home/ubuntu/.ssh/id_rsa_mystique \"$@\""
 end
 
-git "#{base_folder}/shop" do 
-	repository 'git@github.com:zalora/shop.git'
-	enable_submodules true
-	action :sync
-	revision 'master'
-	ssh_wrapper "#{base_folder}/git_wrapper.sh"
-end
-
-git "#{base_folder}/shop-docker" do 
-	repository 'git@github.com:zalora/shop-docker.git'
-	enable_submodules true
-	action :sync
-	revision 'master'
-	ssh_wrapper "#{base_folder}/git_wrapper.sh"
+['shop', 'shop-docker', 'mystique'].each do |repo|
+	git "#{base_folder}/#{repo}" do 
+		repository "git@github.com:zalora/#{repo}.git"
+		enable_submodules true
+		action :sync
+		revision 'master'
+		ssh_wrapper "#{base_folder}/git_wrapper.sh"
+	end
 end
