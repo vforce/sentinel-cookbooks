@@ -33,3 +33,9 @@ end
 		ssh_wrapper "#{base_folder}/git_wrapper.sh"
 	end
 end
+
+bash 'init docker' do
+	cwd "#{base_folder}/shop-docker"
+	code "init.sh"
+	ignore_failure false
+end
