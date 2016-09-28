@@ -34,8 +34,9 @@ end
 	end
 end
 
-bash 'init docker' do
-	cwd "#{base_folder}/shop-docker"
-	code "init.sh"
-	ignore_failure false
+shop_docker_folder = "#{base_folder}/shop-docker"
+
+execute 'init docker' do
+	cwd shop_docker_folder
+	command "#{shop_docker_folder}/init.sh"
 end
